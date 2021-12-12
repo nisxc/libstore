@@ -1,1 +1,3 @@
-# pylibrpg
+# LibStore
+
+## Application written on python
