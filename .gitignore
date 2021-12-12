@@ -1,2 +1,3 @@
 #app logs will be ignored
 libstore/logs
+libstore/packages/__pycache__
