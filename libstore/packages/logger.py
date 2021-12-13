@@ -11,7 +11,7 @@ class Logger:
 
         self.__logger.setLevel(logging.DEBUG)
 
-        self.__handler = logging.FileHandler('libstore/logs/app.log', mode='w')
+        self.__handler = logging.FileHandler('libstore/logs/app.log', mode='a')
 
         self.__handler.setLevel(logging.DEBUG)
         self.__handler.setFormatter(self.__formatter)
@@ -20,4 +20,12 @@ class Logger:
 
     def setWarning(self, message):
         self.__logger.warning(message)
+        print('Log was saved')
+
+    def setDebug(self, message):
+        self.__logger.debug(message)
+        print('Log was saved')
+
+    def setError(self, message):
+        self.__logger.error(message)
         print('Log was saved')
