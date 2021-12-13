@@ -1,5 +1,5 @@
 #app logs / __pycache__ / db will be ignored
 
-libstore/logs
+libstore/logs/*
 libstore/packages/__pycache__
-libstore/db
+libstore/db/*
