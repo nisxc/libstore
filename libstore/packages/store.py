@@ -16,7 +16,7 @@ class Store:
         book = Book(book_title, book_author, book_cost)
         self.__books_list.append(book.getBookInfo())
         print('Book was added successfully')
-        Logger.setWarning(self, 'Hello')
+        Logger.setWarning(self, 'Book was added successfully')
         # logger success or error
 
     def remove_book(self):
@@ -42,8 +42,3 @@ class Store:
                     return book
         print('Book was find successfully')
         # logger success or error
-
-
-b = Store()
-b.add_book()
-print(b.find_book())
