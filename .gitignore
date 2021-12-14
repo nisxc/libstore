@@ -1,0 +1,5 @@
+#app __pycache__ / db will be ignored
+
+libstore/packages/__pycache__
+libstore/packages/exceptions/__pycache__
+libstore/tests/__pycache__
