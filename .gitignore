@@ -1,8 +1,4 @@
-#app logs / __pycache__ / db will be ignored
-
-libstore/logs/*
-libstore/db/*
-libstore/exports/*
+#app __pycache__ / db will be ignored
 
 libstore/packages/__pycache__
 libstore/packages/exceptions/__pycache__
