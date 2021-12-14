@@ -8,5 +8,5 @@ class JSONEncoder(SQLHelper):
         self.__fileName = fileName
         self.__data_list = SQLHelper.select(self)
         print(self.__data_list)
-        with open('libstore/exports/' + self.__fileName + '.json', 'a') as fp:
-            json.dump(self.__data_list, fp)
+        with open('libstore/exports/' + self.__fileName + '.json', 'w') as fp:
+            json.dump({'exports': self.__data_list}, fp)

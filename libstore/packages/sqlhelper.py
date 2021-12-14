@@ -1,7 +1,7 @@
 import sqlite3
 
 CREATE_QUERY = '''CREATE TABLE IF NOT EXISTS {table_name} (
-    id INT PRIMARY KEY,
+    id TEXT PRIMARY KEY,
     title TEXT NOT NULL,
     author TEXT NOT NULL,
     cost INT NOT NULL
@@ -10,6 +10,7 @@ INSERT_QUERY = '''INSERT INTO {table_name} (id, title, author, cost) VALUES (?, 
 DELETE_QUERY = '''DELETE FROM {table_name} WHERE id=?'''
 SELECT_ALL_QUERY = '''SELECT * FROM {table_name}'''
 SELECT_QUERY = '''SELECT * FROM {table_name} WHERE title=?'''
+UPDATE_QUERY = '''UPDATE {table_name} SET title=? WHERE id=?'''
 
 
 class SQLHelper:
@@ -38,6 +39,17 @@ class SQLHelper:
             self.__conn.commit()
         except:
             print('Some error with data base insert state')
+        finally:
+            self.__conn.close()
+
+    def update(self, id, title):
+        try:
+            self.request_connection()
+            self.__cur.execute(UPDATE_QUERY.format(
+                table_name=self.__table_name), (title, id))
+            self.__conn.commit()
+        except:
+            print('Some error with data base update state')
         finally:
             self.__conn.close()
 
